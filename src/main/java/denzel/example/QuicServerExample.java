@@ -48,7 +48,7 @@ public final class QuicServerExample {
                 selfSignedCertificate.privateKey(), null, selfSignedCertificate.certificate())
                 .applicationProtocols("http/0.9").build();
         NioEventLoopGroup group = new NioEventLoopGroup(10);
-        System.out.println(group.next());
+
         ChannelHandler codec = new QuicServerCodecBuilder().sslContext(context)
                 .maxIdleTimeout(5000, TimeUnit.MILLISECONDS)
                 // Configure some limits for the maximal number of streams (and the data) that we want to handle.
